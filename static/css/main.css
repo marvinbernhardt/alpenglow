@@ -1,0 +1,29 @@
+html {
+    font-size: clamp(1em, 0.9em + 0.45vmin, 1.3em);
+}
+
+body {
+    max-width: 70ch;
+    padding: calc(1vmin + .5rem);
+    margin-inline: auto;
+    font-family: system-ui;
+}
+
+body :not(:is(h1,h2,h3,h4,h5,h6)) {
+    line-height: 1.8;
+}
+
+#header {
+    background-color: #ddd;
+}
+
+#menu {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
+#menu a {
+    background-color: #ccc;
+}
