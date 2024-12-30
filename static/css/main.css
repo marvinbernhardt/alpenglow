@@ -1,29 +1,63 @@
+/*
+colors inspired by the Alpenglow theme for Firefox https://addons.mozilla.org/en-US/firefox/addon/firefox-alpenglow/
+
+#FFF2E8
+#FFADA4
+#fd83a6
+#FC4BA0
+#a280e5  not in alpenglow
+#864be4
+#713cd7
+#311C64
+#21123A
+
+ */
 html {
     font-size: clamp(1em, 0.9em + 0.45vmin, 1.3em);
 }
 
+
 body {
-    max-width: 70ch;
+    max-width: 72ch;
     padding: calc(1vmin + .5rem);
     margin-inline: auto;
     font-family: system-ui;
+    background: #fff8f2;
+    color: #000;
 }
 
 body :not(:is(h1,h2,h3,h4,h5,h6)) {
-    line-height: 1.8;
+    line-height: 1.7;
 }
 
-#header {
-    background-color: #ddd;
+a:link {
+    color: #713cd7;
+}
+a:visited {
+    color: #311C64;
+}
+a:hover {
+    color: #FC4BA0;
+}
+a:active {
+    color: #fd83a6;
 }
 
-#menu {
-    width: 50%;
-    margin-left: auto;
-    margin-right: 0;
-    text-align: right;
-}
-
-#menu a {
-    background-color: #ccc;
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #0d0717;
+        color: #FFFFFF;
+    }
+    a:link {
+        color: #a280e5;
+    }
+    a:visited {
+        color: #713cd7;
+    }
+    a:hover {
+        color: #FC4BA0;
+    }
+    a:active {
+        color: #fd83a6;
+    }
 }
