@@ -16,7 +16,7 @@ could use CSS variables, but then no highlighting in Neovim
 #311c64
 #21123a
 #0d0717
-*/
+ */
 
 html {
     font-size: clamp(1em, 0.9em + 0.45vmin, 1.3em);
@@ -25,10 +25,14 @@ html {
 
 body {
     max-width: 72ch;
-    /*padding: calc(1vmin + .5rem);*/
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: calc(1vmin + .5rem);
+    padding-right: calc(1vmin + .5rem);
+    margin-top: 0;
     margin-inline: auto;
     font-family: system-ui;
-    background: var(--grad00);
+    background: #fff8f2;
     color: #000;
 }
 
@@ -43,7 +47,7 @@ a:visited {
     color: #311C64;
 }
 a:hover {
-    color: #FC4BA0;
+    color: #fc4ba0;
 }
 a:active {
     color: #fd83a6;
@@ -51,20 +55,31 @@ a:active {
 
 /* link underline only on hover and never for title */
 a{
-  text-decoration: none;
+    text-decoration: none;
 }
 a:hover{
-  text-decoration: underline;
+    text-decoration: underline;
 }
 h1 a:hover{
-  text-decoration: none;
+    text-decoration: none;
+}
+
+/* site header = hgroup + nav */
+body header {
+    background: #fff;
+    padding-top: 1ch;
+    padding-bottom: 1ch;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    margin-top: 0;
+    margin-bottom: 1ch;
 }
 
 /* navigation menu */
 nav {
-    font-size: 1.2em;
+    font-size: clamp(1.2em, 1.1em + 0.45vmin, 1.4em);
     overflow: auto;
-    margin: 0 auto 2em auto;
+    margin: 0;
     padding: 0;
     text-align: center;
 }
@@ -87,19 +102,43 @@ article {
     background: #fff;
     padding-top: 1ch;
     padding-bottom: 1ch;
-    padding-left: 1.5ch;
-    padding-right: 1.5ch;
+    padding-left: 2ch;
+    padding-right: 2ch;
     margin-bottom: 1ch;
-    border-radius: 1ch;
+    border-radius: 5ch / 2ch 0;
+    box-shadow: -1px -1px 0px #fc4ba0;
+}
+article header {
+    padding-top: 1.5ch;
+    padding-bottom: 1ch;
+    padding-left: 0ch;
+    padding-right: 0ch;
 }
 article header h2 {
     margin: 0;
 }
 
+.highlight {
+    font-size: 0.85em;
+    background: #fafafa;
+    outline-style: solid;
+    outline-width: 0.2ch;
+    outline-color: #000;
+    padding-top: 0.5ch;
+    padding-bottom: 0.5ch;
+    padding-left: 0.5ch;
+    padding-right: 0.5ch;
+}
+.highlight pre {  /* code is wrapped in pre */
+    margin: 0;
+}
+
+
+/* dark mode colors */
 @media (prefers-color-scheme: dark) {
     body {
-        background: #21123A;
-        color: #FFF;
+        background: #21123a;
+        color: #fff;
     }
     a:link {
         color: #a280e5;
@@ -108,12 +147,18 @@ article header h2 {
         color: #713cd7;
     }
     a:hover {
-        color: #FC4BA0;
+        color: #fc4ba0;
     }
     a:active {
         color: #fd83a6;
     }
-    article {
+    article, body header {
         background: #140b23;
+    }
+    .highlight {
+        background: #050505;
+    }
+    article {
+        box-shadow: 1px 1px 0px #fd83a6;
     }
 }
