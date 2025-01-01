@@ -97,6 +97,12 @@ nav .active a:link, nav .active a:visited {
     text-shadow: none !important;
 }
 
+.article_bg {
+    margin: 0;
+    padding: 0;
+    background: #311c64;
+    /*border-radius: 3ch / 1ch 0;*/
+}
 /* article */
 article {
     background: #fff;
@@ -105,8 +111,8 @@ article {
     padding-left: 2ch;
     padding-right: 2ch;
     margin-bottom: 1ch;
-    border-radius: 5ch / 2ch 0;
-    box-shadow: -1px -1px 0px #fc4ba0;
+    border-radius: 5ch / 2ch 0 0 0;
+    /*box-shadow: -1px -1px 0px #fc4ba0;*/
 }
 article header {
     padding-top: 1.5ch;
@@ -159,6 +165,6 @@ article header h2 {
         background: #050505;
     }
     article {
-        box-shadow: 1px 1px 0px #fd83a6;
+        /*box-shadow: 1px 1px 0px #fd83a6;*/
     }
 }
