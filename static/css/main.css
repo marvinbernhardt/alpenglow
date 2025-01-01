@@ -40,29 +40,15 @@ body :not(:is(h1,h2,h3,h4,h5,h6)) {
     line-height: 1.7;
 }
 
-a:link {
-    color: #713cd7;
-}
-a:visited {
-    color: #311C64;
-}
-a:hover {
-    color: #fc4ba0;
-}
-a:active {
-    color: #fd83a6;
-}
-
-/* link underline only on hover and never for title */
-a{
-    text-decoration: none;
-}
-a:hover{
-    text-decoration: underline;
-}
-h1 a:hover{
-    text-decoration: none;
-}
+a{ text-decoration: none; }
+a:hover{ text-decoration: underline; }
+a:link { color: #713cd7; }
+a:visited { color: #311C64; }
+a:hover { color: #fc4ba0; }
+a:active { color: #fd83a6; }
+h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, nav a:link, nav a:visited  { color: #000; }
+h1 a:hover, h2 a:hover, nav a:hover { color: #fc4ba0; }
+h1 a:active, h2 a:active, nav a:active { color: #fd83a6; }
 
 /* site header = hgroup + nav */
 body header {
@@ -97,22 +83,14 @@ nav .active a:link, nav .active a:visited {
     text-shadow: none !important;
 }
 
-.article_bg {
-    margin: 0;
-    padding: 0;
-    background: #311c64;
-    /*border-radius: 3ch / 1ch 0;*/
-}
 /* article */
 article {
     background: #fff;
     padding-top: 1ch;
-    padding-bottom: 1ch;
+    padding-bottom: 2ch;
     padding-left: 2ch;
     padding-right: 2ch;
     margin-bottom: 1ch;
-    border-radius: 5ch / 2ch 0 0 0;
-    /*box-shadow: -1px -1px 0px #fc4ba0;*/
 }
 article header {
     padding-top: 1.5ch;
@@ -122,6 +100,9 @@ article header {
 }
 article header h2 {
     margin: 0;
+}
+article header small time {
+    opacity: 0.67;
 }
 
 .highlight {
@@ -143,7 +124,7 @@ article header h2 {
 /* dark mode colors */
 @media (prefers-color-scheme: dark) {
     body {
-        background: #21123a;
+        background: #000;
         color: #fff;
     }
     a:link {
@@ -159,12 +140,12 @@ article header h2 {
         color: #fd83a6;
     }
     article, body header {
-        background: #140b23;
+        background: #0d0717;
     }
     .highlight {
         background: #050505;
     }
-    article {
-        /*box-shadow: 1px 1px 0px #fd83a6;*/
-    }
+    h1 a:link, h1 a:visited, h2 a:link, h2 a:visited, nav a:link, nav a:visited { color: #fff; }
+    h1 a:hover, h2 a:hover, nav a:hover { color: #fc4ba0; }
+    h1 a:active, h2 a:active, nav a:active { color: #fd83a6; }
 }
