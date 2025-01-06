@@ -61,6 +61,11 @@ body header {
     margin-bottom: 1ch;
 }
 
+body header #logo_title {
+    display: flex;
+    align-items: center;
+}
+
 /* navigation menu */
 nav {
     font-size: clamp(1.2em, 1.1em + 0.45vmin, 1.4em);
@@ -71,7 +76,7 @@ nav {
 }
 
 nav ul {list-style: none; margin: 0 auto; padding: 0;}
-nav li {float: left; display: inline; margin: 0;}
+nav li {float: left; display: inline; margin-right: 1ch;}
 
 nav a:link, nav a:visited {
     display: inline-block;
@@ -101,7 +106,7 @@ article header {
 article header h2 {
     margin: 0;
 }
-article header small time {
+article header small {
     opacity: 0.67;
 }
 
