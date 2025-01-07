@@ -9,10 +9,12 @@
         {% if SITESUBTITLE %}
             <meta name="description" content="{{ SITESUBTITLE }}" />
         {% endif %}
+        <link rel="icon" href="{{ SITEURL }}/favicon-dark.ico" media="(prefers-color-scheme: dark)">
+        <link rel="icon" href="{{ SITEURL }}/favicon.ico" media="(prefers-color-scheme: light)">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
-        <script src="js/vega_5.30.0.js"></script>
-        <script src="js/vega-lite_5.21.0.js"></script>
-        <script src="js/vega-embed_6.26.0.js"></script>
+        <script src="{{ SITEURL }}/js/vega_5.30.0.js"></script>
+        <script src="{{ SITEURL }}/js/vega-lite_5.21.0.js"></script>
+        <script src="{{ SITEURL }}/js/vega-embed_6.26.0.js"></script>
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Full Atom Feed" />
         {% endif %}
@@ -42,13 +44,16 @@
 
     <body>
         <header>
-            <div id=logo_title>
-                <a href="/">
-                    <img src="images/erlenmeyer.svg" alt="Logo: an Erlenmeyer flask containing a bar chart">
-                </a>
-            </div>
-            <hgroup><h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>{% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}</hgroup>
-            <nav><ul>
+            <a id="logo_title" href="{{ SITEURL }}/">
+                <picture>
+                    <source srcset="{{ SITEURL }}/images/erlenmeyer.svg" media="(prefers-color-scheme: light)"/>
+                    <source srcset="{{ SITEURL }}/images/erlenmeyer-dark.svg"  media="(prefers-color-scheme: dark)"/>
+                    <img src="{{ SITEURL }}/images/erlenmeyer.svg" alt="Logo: an Erlenmeyer flask containing a bar chart">
+                </picture>
+                <hgroup><h1>{{ SITENAME }}</h1></hgroup>
+            </a>
+            <nav id="site_nav">
+                <ul>
                     {% for title, link in MENUITEMS %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
                     {% endfor %}
@@ -62,7 +67,8 @@
                             <li><a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{ cat}}</a></li>
                         {% endfor %}
                     {% endif %}
-                </ul></nav>
+                </ul>
+            </nav>
         </header>
         <main>
             {% block content %}
