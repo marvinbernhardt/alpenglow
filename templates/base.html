@@ -44,7 +44,7 @@
 
     <body>
         <header>
-            <a id="logo_title" href="{{ SITEURL }}/">
+            <a id="logo-title" href="{{ SITEURL }}/">
                 <picture>
                     <source srcset="{{ SITEURL }}/images/erlenmeyer.svg" media="(prefers-color-scheme: light)"/>
                     <source srcset="{{ SITEURL }}/images/erlenmeyer-dark.svg"  media="(prefers-color-scheme: dark)"/>
@@ -52,7 +52,7 @@
                 </picture>
                 <hgroup><h1>{{ SITENAME }}</h1></hgroup>
             </a>
-            <nav id="site_nav">
+            <nav id="site-nav">
                 <ul>
                     {% for title, link in MENUITEMS %}
                         <li><a href="{{ link }}">{{ title }}</a></li>
