@@ -12,9 +12,6 @@
         <link rel="icon" href="{{ SITEURL }}/favicon-dark.ico" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="{{ SITEURL }}/favicon.ico" media="(prefers-color-scheme: light)">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
-        <script src="{{ SITEURL }}/js/vega_5.30.0.js"></script>
-        <script src="{{ SITEURL }}/js/vega-lite_5.21.0.js"></script>
-        <script src="{{ SITEURL }}/js/vega-embed_6.26.0.js"></script>
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Full Atom Feed" />
         {% endif %}
@@ -76,7 +73,7 @@
         </main>
         <footer>
             <address>
-                <!--This is a private website.-->
+                This website is generated using <a href="https://getpelican.com/">Pelican</a> with the <a href="https://github.com/marvinbernhardt/alpenglow">Alpenglow theme</a>
             </address>
         </footer>
     </body>
